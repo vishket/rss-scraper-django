@@ -24,7 +24,7 @@ This app assumes you have  `docker` & `docker compose` installed on your machine
 
 #### Running the Project Locally
 
-The app comprises of 5 services, each of which can be spun up in individual docker containers.
+The app comprises of 5 (+1 nginx in prod) services, each of which can be spun up in individual docker containers.
 
 **To spin up the containers**
 
@@ -37,7 +37,7 @@ The website can be accessed at 127.0.0.1:8000
 **To bring down containers**
 
 ```
-docker-compose down
+docker-compose down -v
 ```
 
 #### Running the Project in a Production Setting
