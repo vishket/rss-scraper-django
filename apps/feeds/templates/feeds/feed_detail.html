@@ -1,0 +1,33 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+  <div class="feed-name">
+    <div class="row">
+
+      <div class="col-sm-9">
+        <p class="text-info">{{ feed.title }}</p>
+        <p class="text-info"><small>Last Updated at: {{ feed.last_updated_at }}</small></p>
+      </div>
+
+      <div class="col-sm-3">
+        <a href="{{ feed.get_update_url }}" class="btn btn-info btn-sm" role="button">Update</a>
+        <a href="{{ feed.get_unfollow_url }}" class="btn btn-warning btn-sm" role="button">Unfollow</a>
+      </div>
+
+  </div>
+
+    {% if feed.items.all %}
+      <p class="text-secondary">Unread Items <span class="badge badge-primary badge-pill">{{ feed.unread }}</span></p>
+      <div class="list-group">
+        {% for item in feed.items.all %}
+            <a href="{{ item.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-light">{{ item.title }}</a>
+            {% if item.published_at %}
+              <p class="text-info"><small>Published At: {{ item.published_at }}</small></p>
+            {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>There are no Items.</p>
+  </div>
+  {% endif %}
+{% endblock %}

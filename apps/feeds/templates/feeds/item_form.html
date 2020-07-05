@@ -1,0 +1,32 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+
+  <div class="container">
+    <p class="text-info">{{ item.title }}</p>
+    {% if item.description %}
+      <p class="text-info">{{ item.description }}</p>
+    {% endif %}
+    {% if item.summary %}
+      <p class="text-info">{{ item.summary }}</p>
+    {% endif %}
+    <a href="{{ item.link }}"><p class="text-info">Link</p></a>
+
+    <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#comments">View Comments</button>
+    <div id="comments" class="collapse">
+      <ul class="list-group">
+          {% for comment in item.comments.all %}
+            <li class="list-group-item list-group-item-light">{{ comment }}</li>
+          {% endfor %}
+      </ul>
+    </div>
+    <p class="text-info">Update Item</p>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit" class="btn btn-outline-secondary">Update</button>
+      </form>
+
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,10 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+  <div>
+    <p class="text-info">{{ notification.title }}</p>
+    <p class="text-info">Retry update by clicking on the following link:</p>
+    <a href="{{ notification.details }}">{{ notification.details }}</a>
+  </div>
+
+{% endblock %}

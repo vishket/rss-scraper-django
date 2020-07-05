@@ -1,0 +1,12 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+  <p class="text-info">Manage Feeds |<small> Follow/Unfollow feeds</small></p>
+
+  <form method="post">
+    {% csrf_token %}
+    <p class="text-info">Confirm "{{ object }}" ?</p>
+
+    <input type="submit" value="Confirm">
+  </form>
+{% endblock %}

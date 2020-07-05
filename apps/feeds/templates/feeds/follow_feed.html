@@ -1,0 +1,11 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+  <p class="text-info">Follow New Feeds</p>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Follow</button>
+  </form>
+{% endblock %}

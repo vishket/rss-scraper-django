@@ -1,0 +1,12 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+
+    <p class="text-info">My Feeds |<small> Following</small></p>
+    <div class="list-group">
+      {% for feed in feed_list.all %}
+        <a href="{{ feed.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-light">{{ feed }}  <span class="badge badge-primary badge-pill">{{ feed.unread }}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

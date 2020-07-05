@@ -1,0 +1,14 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <p class="text-info">Bookmarks</p>
+  <div class="list-group">
+    {% for item in item_list %}
+    <a href="{{ item.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-light">{{ item }}</a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

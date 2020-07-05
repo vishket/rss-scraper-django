@@ -1,0 +1,12 @@
+{% extends "rss_scraper/base.html" %}
+
+{% block content %}
+
+    <p class="text-info">My Notifications</p>
+    <div class="list-group">
+      {% for notification in notification_list %}
+        <a href="{{ notification.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-light">{{ notification }} </a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
