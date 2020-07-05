@@ -48,7 +48,7 @@ Refer the production docker compose yaml file like so:
 docker-compose -f docker-compose.prod.yml up -d --build
 ```
 
-The website can be accessed at https://127.0.0.1:1337
+The website can be accessed at http://127.0.0.1:1337
 
 #### Running Tests
 
@@ -62,7 +62,7 @@ Some configuration to be aware of:
 
 - Feeds are scheduled to update every 30 mins
 
-- Max retry for failed feed updates is 2 with an exponential back-off set to 5 secs
+- Max retry attempts for failed feed updates is 2 - with an exponential back-off set to 5 secs
 
 - Requests have a 10 sec timeout
 
