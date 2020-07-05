@@ -69,7 +69,7 @@ def test_update_all_feeds_success(
     # Create a test feeds and related item
     feed_zero_items = G(Feed, title="test", rss_url=rss_url)
     feed_two_items = G(Feed, title="test", rss_url=rss_url)
-    G(Item, title="test0", feed=feed_two_items)
+    G(Item, title="test0", feed=feed_two_items, bookmark=True)
     G(Item, title="test1", feed=feed_two_items)
 
     # Verify feeds initial items
@@ -84,9 +84,9 @@ def test_update_all_feeds_success(
 
     # Verify both feeds are updated
     # and the two existing items are deleted
-    assert Item.objects.count() == 6
+    assert Item.objects.count() == 7
     assert feed_zero_items.items.count() == 3
-    assert feed_two_items.items.count() == 3
+    assert feed_two_items.items.count() == 4
 
 
 @pytest.mark.django_db(transaction=True)

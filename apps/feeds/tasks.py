@@ -93,7 +93,7 @@ def update_feed(parsed_items, feed_id):
         return None
 
     feed = Feed.objects.get(pk=feed_id)
-    feed.items.all().delete()
+    feed.items.filter(bookmark=False).delete()
 
     items_list = []
     for item in parsed_items:
