@@ -1,0 +1,11 @@
+celery==4.4.5
+Django==3.0.7
+django-debug-toolbar==2.2
+django-extensions==2.2.9
+django-stronghold==0.4.0
+feedparser==5.2.1
+gunicorn==20.0.4
+psycopg2>=2.7,<3.0
+python-dateutil==2.8.1
+python-dotenv==0.13.0
+requests==2.24.0
