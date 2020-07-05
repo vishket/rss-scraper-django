@@ -1,10 +1,6 @@
 from dateutil import parser
 
 
-class ParseDatetimeError(Exception):
-    pass
-
-
 def str_to_datetime(str_datetime):
     if not str_datetime:
         return None

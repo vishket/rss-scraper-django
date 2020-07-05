@@ -2,7 +2,6 @@ import datetime as dt
 import pytest
 
 from apps.feeds.date_utils import str_to_datetime
-from apps.feeds.date_utils import ParseDatetimeError
 
 
 def test_str_to_datetime_success():
